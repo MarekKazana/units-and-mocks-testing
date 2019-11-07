@@ -7,23 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class AnimalController {
+public class AnimalController  {
 
-    private AnimalRepo animalRepo;
 
     @Autowired
-    public AnimalController(AnimalRepo animalRepo) {
-        this.animalRepo = animalRepo;
-    }
+    private AnimalService animalService;
+
 
     public List<Animal> getAnimals (){
-        List<Animal> animals = new ArrayList<>();
-        animalRepo.findAll().iterator().forEachRemaining(animals::add);
-        return animals;
+        return animalService.getAnimals();
     }
 
     public Animal addAnimal(Animal animal){
 
-        return animalRepo.save(animal);
+        return animalService.addAnimal(animal);
     }
 }

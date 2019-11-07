@@ -1,5 +1,6 @@
 package pl.marekkazana.unitsandmockstesting;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -21,12 +22,13 @@ public class UnitsAndMocksTestingApplication {
 
 
     @Autowired
-    private AnimalRepo animalRepo;
+    private AnimalService animalService;
 
 
     @EventListener(ApplicationReadyEvent.class)
     public void init(){
-        animalRepo.save(new Animal("dog"));
-        animalRepo.save(new Animal("cat"));
+        animalService.addAnimal(new Animal("dog"));
+        animalService.addAnimal(new Animal("cat"));
+
     }
 }
