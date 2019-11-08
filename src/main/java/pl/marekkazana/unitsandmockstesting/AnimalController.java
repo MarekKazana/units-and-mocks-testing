@@ -22,4 +22,12 @@ public class AnimalController  {
 
         return animalService.addAnimal(animal);
     }
+
+    public boolean getTrue(){
+        return animalService.getTrue();
+    }
+
+    public boolean getVeryTrue(){
+        return true;
+    }
 }

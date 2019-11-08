@@ -22,4 +22,13 @@ public class AnimalService {
 
         return animalRepo.save(animal);
     }
+
+    public boolean getTrue() {
+        return true;
+    }
+
+    public String get(){
+        return "hello";
+    }
+
 }
